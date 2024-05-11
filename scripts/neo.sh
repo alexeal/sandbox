@@ -1,8 +1,8 @@
 #!/bin/bash
 #####################################################
-# @author:alexeal									#
-# @date:2017/03/05									#
-# @shell:bin/bash									#
+# @author:alexeal									                  #
+# @date:2017/03/05                                  #
+# @shell:bin/bash                                   #
 #####################################################
 ##### The Neo Trip #####
 reset
