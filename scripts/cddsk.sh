@@ -1,24 +1,31 @@
 #!/usr/bin/env bash
+#####################################################
+# @author:alexeal                                   #
+# @date:2024/05/11                                  #
+# @shell:bin/bash                                   #
+#####################################################
+RED='\033[0;31m'
+NC='\033[0m' 
+diskPath=/Volumes/ # DEFAULT PATH (macOS PATH)
+# Defines path accordingly to the OS
 if [ "$(uname)" = "Darwin" ]; then
-    dskpath=/Volumes/
+    diskPath=/Volumes/
 elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
-    dskpath=/run/media/$USER/ # be cautious: put the right path here
+    diskPath=/run/media/$USER/ # be cautious: put the right path here
 fi
-if [ $# -ne 0 ];then
-  if [ $# -ge 1 ];then
-    if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-        echo "Usage: cddsk <label> where label is the name of the partition"
-        echo "Use cddsk --list to get the list of available disks"
-        echo ""
-    elif [[ "$1" == "--list" ]];then
-        ls -Fa $dskpath
-    elif [ -d $dskpath$1 ];then
-            cd $dskpath$1
+# Change directory to mounted disk with the label
+if [[ ! -z "$1"  ]]; then
+    # is valid directory 
+    if [[ -d $diskPath$1  ]]; then
+        cd $diskPath$1
+    elif [ "$1" = "--help" ]; then
+            echo "Usage: cddsk <label> where label is the name of the partition"
+            echo "Use cddsk --list to get the list of available disks"
     else
-        echo "An error happenned"
-        echo "Check the command help to seek more informations"
+        echo -e "${RED}Error: Unknown disk${NC}"
+        echo -e "Existing volumes:"
+        ls -aF $diskPath
     fi
-  fi
-else
-  echo "Check the command help to seek more informations with the option --help"
+else 
+    echo -e "${RED}Error: Unknown arg${NC}"
 fi
