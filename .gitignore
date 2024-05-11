@@ -16,3 +16,4 @@ Cargo.lock
 
 # Ignore macOS ._ files
 ._*
+.DS_Store
