@@ -21,6 +21,8 @@ if [[ ! -z "$1"  ]]; then
     elif [ "$1" = "--help" ]; then
             echo "Usage: cddsk <label> where label is the name of the partition"
             echo "Use cddsk --list to get the list of available disks"
+    elif [ "$1" = "--list" ]; then
+            ls -aF $diskPath
     else
         echo -e "${RED}Error: Unknown disk${NC}"
         echo -e "Existing volumes:"
