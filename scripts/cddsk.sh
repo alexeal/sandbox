@@ -9,7 +9,6 @@ if [ $# -ne 0 ];then
         echo "Usage: cddsk <label> where label is the name of the partition"
         echo "Use cddsk --list to get the list of available disks"
         echo ""
-        exit 1
     elif [[ "$1" == "--list" ]];then
         ls -Fa $dskpath
     elif [ -d $dskpath$1 ];then
