@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-if [ "$(uname)" == "Darwin" ]; then
+if [ "$(uname)" = "Darwin" ]; then
     dskpath=/Volumes/
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
     dskpath=/run/media/$USER/ # be cautious: put the right path here
 fi
 if [ $# -ne 0 ];then
