@@ -1,6 +1,6 @@
 # SANDBOX
 
-Where I try stuff or doing some tuts.
+As the name of this repo suggests, it is a sandbox where I try some tutorials or some scripts.
 
 - [Rust](./rust)
 - [C](./c)

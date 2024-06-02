@@ -11,7 +11,7 @@ server.on('listening', () => {
 
 server.on('request', (request, response) => {
   const {method, url} = request;
-  console.log('Server URL: %s %s', method, url);
+  console.log('Request: %s %s', method, url);
   response.setHeader('Content-Type', 'text/html; charset=utf-8');
   response.write('<h1>Rendering response</h1>');
   response.write('<p>OS: '+type()+'</p>');
