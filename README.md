@@ -6,3 +6,5 @@ As the name of this repo suggests, it is a sandbox where I try some tutorials or
 - [C](./c)
 - [Scripts shell](./scripts)
 - [Web](./web)
+  - [JS](./web/js)
+  - [Node.js](./web/node)
